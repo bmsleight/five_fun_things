@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% load thumbnail %}
+
+{% block content %}
+
+<h2>Five Fun Things - my list</h2>
+
+{% regroup object_list by thing_date|date:"Y-m-d" as objects_by_day %}
+<ul>
+  {% for day in objects_by_day %}
+    <li>{{day.list.0.thing_date|date:"d F, Y "}}
+    <ul>
+    {% for obj in day.list %}
+        <li>{{obj.thing}} {% thumbnail obj.photo "100x100" crop="center" as im %} {% endthumbnail %}</li>
+        
+{% if obj.photo|is_portrait %}
+    <div class="portrait">
+    {% thumbnail obj.photo "200" crop="10px 10px" format="PNG" as im %}
+        <img src="{{ im.url }}">
+    {% endthumbnail %}
+    </div>
+{% else %}
+    <div class="landscape">
+    {% thumbnail obj.photo "100" crop="bottom" format="PNG" as im %}
+        <img src="{{ im.url }}">
+    {% endthumbnail %}
+    </div>
+{% endif %}
+
+    {% endfor %}
+    </ul>
+    </li>
+{% endfor %}
+</ul>
+
+{% endblock %}
+

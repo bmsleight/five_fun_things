@@ -20,6 +20,9 @@ class Thing(models.Model):
         blank=True,editable=True,
         verbose_name="Thing Photo"
         )
-    
+
+    class Meta:
+        ordering = ["-thing_date"]
+
     def __str__(self):
-        return self.description_text + " on " + self.thing_date.strftime("%Y-%m-%d")
+        return self.thing + " on " + self.thing_date.strftime("%Y-%m-%d")

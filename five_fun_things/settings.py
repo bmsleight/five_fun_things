@@ -44,6 +44,8 @@ INSTALLED_APPS = [
     'allauth',
     'allauth.account',
     'allauth.socialaccount', 
+    
+    'sorl.thumbnail',
 ]
 
 AUTH_USER_MODEL = 'users.CustomUser'
@@ -63,7 +65,7 @@ ROOT_URLCONF = 'five_fun_things.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'five_fun_things/templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -154,3 +156,6 @@ ACCOUNT_LOGOUT_REDIRECT_URL ='/accounts/login/'
 LOGIN_REDIRECT_URL = '/accounts/email/'
 
 ACCOUNT_SIGNUP_FORM_CLASS = 'users.forms.SignupForm'
+
+MEDIA_ROOT = '/home/bms/django/five_fun_things/'
+MEDIA_URL = '/uploads/'
