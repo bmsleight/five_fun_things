@@ -26,5 +26,5 @@ urlpatterns = [
     path('accounts/', include('allauth.urls')), 
     path('accounts/', TemplateView.as_view(template_name='accounts.html')),
     path('things/', include('funthings.urls')), 
-#    path('', TemplateView.as_view(template_name='index.html'))
+    path('', TemplateView.as_view(template_name='index.html'))
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

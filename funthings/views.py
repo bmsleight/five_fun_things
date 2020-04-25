@@ -1,4 +1,5 @@
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.auth.decorators import login_required
 from django.forms import modelformset_factory, Textarea, ClearableFileInput
 from django.shortcuts import render, redirect
 from django.views.generic import ListView
@@ -7,7 +8,8 @@ from datetime import datetime
 
 from .models import Thing
 from .forms import DateForm
-  
+
+@login_required
 def date_view(request): 
     if request.method == 'POST':
         form = DateForm(request.POST)
