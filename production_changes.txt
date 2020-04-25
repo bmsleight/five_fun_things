@@ -9,3 +9,6 @@ EMAIL_HOST_PASSWORD = 'ADDHERE'
 DEFAULT_FROM_EMAIL = 'noreply@fivefunthings.com'
 
 # Chnage secret Key
+
+
+python manage.py collectstatic
