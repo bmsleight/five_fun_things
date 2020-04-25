@@ -56,7 +56,7 @@ def five_fun_form(request, year, month, day):
             print(formset.errors)
  
     form = ThingFormSet(queryset=Thing.objects.filter(thing_date=thing_date))
-    return render(request, 'index.html', {'form': form })
+    return render(request, 'journal.html', {'form': form })
 
 
 class ThingList(LoginRequiredMixin, ListView):

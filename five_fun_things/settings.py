@@ -25,7 +25,11 @@ SECRET_KEY = '45@38u5$)-o9makot8_+mq+l)s7q9*&^3hnb8in9d@%i80vjl='
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['kivy-dev.lan']
+ALLOWED_HOSTS = [
+    'kivy-dev.lan', 
+    'fivefunthings.lan', 
+    'fivefunthings.com' 
+]
 
 
 # Application definition
@@ -146,6 +150,7 @@ AUTHENTICATION_BACKENDS = (
 
 SITE_ID = 1
 
+ACCOUNT_EMAIL_SUBJECT_PREFIX = 'FiveFunThings >'
 ACCOUNT_EMAIL_REQUIRED = True
 ACCOUNT_EMAIL_VERIFICATION = "mandatory"
 ACCOUNT_USERNAME_REQUIRED = False

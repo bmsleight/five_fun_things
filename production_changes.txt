@@ -1,0 +1,11 @@
+# Change setting:-
+# EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'mail.lan'  # mail.fivefunthings.com
+EMAIL_USE_TLS = True
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'noreply@fivefunthings.com'
+EMAIL_HOST_PASSWORD = 'ADDHERE'
+DEFAULT_FROM_EMAIL = 'noreply@fivefunthings.com'
+
+# Chnage secret Key
