@@ -25,7 +25,7 @@ SECRET_KEY = '45@38u5$)-o9makot8_+mq+l)s7q9*&^3hnb8in9d@%i80vjl='
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['kivy-dev.lan']
 
 
 # Application definition
@@ -130,6 +130,10 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, "static"),
+]
+
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 AUTHENTICATION_BACKENDS = (
@@ -157,5 +161,7 @@ LOGIN_REDIRECT_URL = '/accounts/email/'
 
 ACCOUNT_SIGNUP_FORM_CLASS = 'users.forms.SignupForm'
 
-MEDIA_ROOT = '/home/bms/django/five_fun_things/'
 MEDIA_URL = '/uploads/'
+MEDIA_ROOT = '/home/bms/django/five_fun_things/'
+#MEDIA_ROOT = '/home/fivefunthings/five_fun_things/'
+STATIC_ROOT = '/home/fivefunthings/static'

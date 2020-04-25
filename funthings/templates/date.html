@@ -1,17 +1,16 @@
-<!DOCTYPE html>
-<html>
-  <head>
-       <meta charset="utf-8">
-       <title>Basic Site Template</title>
-  </head>
-  <body>
-    <form method="POST">
+{% extends "base.html" %}
+
+{% block header2 %}Journal Select DatE{% endblock %}
+
+{% block content %}
+
+    <form method="POST" class="pure-form pure-form-aligned">
     {% csrf_token %}
     {{form.as_p }}
     {% for error in formset.errors %}
         {{ error }}<br/>
     {% endfor %}
-    <input type="submit" value="Journal">
+    <button type="submit" class="pure-button">Journal</button>
+
     </form>
-  </body>
-</html>
+{% endblock %}

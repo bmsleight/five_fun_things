@@ -1,9 +1,10 @@
 {% extends "base.html" %}
 {% load thumbnail %}
 
+{% block header2 %}Five Fun Things - my list{% endblock %}
+
 {% block content %}
 
-<h2>Five Fun Things - my list</h2>
 
 {% regroup object_list by thing_date|date:"Y-m-d" as objects_by_day %}
 <ul>

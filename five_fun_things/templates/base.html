@@ -1,11 +1,43 @@
-<!DOCTYPE html>
-<html>
-  <head>
-       <meta charset="utf-8">
-       <title>Basic Site Template</title>
-  </head>
-  <body>
-    <h1>{{ title }}</h1>
-    <p>{% block content %}{% endblock content %}</p>
-  </body>
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.1/build/pure-min.css" integrity="sha384-" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.1/build/grids-responsive-min.css">
+    
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+    {% load static %}
+    <link rel="stylesheet" href="{% static "css/layouts/marketing.css" %}">
+    <title>Five Fun Things</title>
+    <meta name="description" content="Five Fun Things - Good mental health everyday.">  
+</head>
+<body>
+
+<div class="header">
+    <div class="home-menu pure-menu pure-menu-horizontal pure-menu-fixed">
+        <a class="pure-menu-heading" href="/">Five Fun Things</a>
+
+        <ul class="pure-menu-list">
+            <li class="pure-menu-item"><a href="/things/" class="pure-menu-link"><i class="fa fa-th-list"></i></a></li>
+            <li class="pure-menu-item"><a href="/things/journal/" class="pure-menu-link"><i class="fa fa-pencil"></i></a></li>
+            <li class="pure-menu-item"><a href="/accounts/" class="pure-menu-link"><i class="fa fa-user" aria-hidden="true"></i></a></li>
+        </ul>
+    </div>
+</div>
+
+<div class="content-wrapper">
+  <div class="content">
+    <h2 class="content-head ">{% block header2 %}{% endblock %}</h2>
+    {% block content %}{% endblock content %}
+  </div>
+
+  <div class="footer l-box is-center">
+    Good mental health everyday
+  </div>
+</div>
+
+
+</body>
 </html>

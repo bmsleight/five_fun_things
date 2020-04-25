@@ -1,5 +1,5 @@
 from django.contrib.auth.mixins import LoginRequiredMixin
-from django.forms import modelformset_factory
+from django.forms import modelformset_factory, Textarea, ClearableFileInput
 from django.shortcuts import render, redirect
 from django.views.generic import ListView
 
@@ -29,9 +29,12 @@ def five_fun_form(request, year, month, day):
     print(date_str, thing_date)
 
     ThingFormSet = modelformset_factory(Thing, 
-                                        fields=('thing', 'photo'), 
+                                        fields=('thing', 'photo'),
+                                        widgets={"thing": Textarea(attrs={'rows':2, 'cols':40, 'class': 'pure-form ', }),
+                                                 "photo": ClearableFileInput(attrs={'class': 'custom-file-upload',}) }, 
                                         extra=3,
-                                        min_num=1,
+                                        min_num=2,
+                                        max_num=6,
                                         )
 
 

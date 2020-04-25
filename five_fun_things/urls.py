@@ -19,8 +19,12 @@ from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
 
+from django.views.generic import TemplateView
+
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('accounts/', include('allauth.urls')), # new
-    path('things/', include('funthings.urls')), # new
+    path('accounts/', include('allauth.urls')), 
+    path('accounts/', TemplateView.as_view(template_name='accounts.html')),
+    path('things/', include('funthings.urls')), 
+    path('', TemplateView.as_view(template_name='index.html'))
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
