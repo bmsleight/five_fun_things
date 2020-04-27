@@ -34,8 +34,8 @@ def five_fun_form(request, year, month, day):
                                         fields=('thing', 'photo'),
                                         widgets={"thing": Textarea(attrs={'rows':2, 'cols':40, 'class': 'pure-form ', }),
                                                  "photo": ClearableFileInput(attrs={'class': 'custom-file-upload',}) }, 
-                                        extra=3,
-                                        min_num=2,
+                                        extra=4,
+                                        min_num=1,
                                         max_num=6,
                                         )
 
