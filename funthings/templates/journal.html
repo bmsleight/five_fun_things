@@ -3,13 +3,33 @@
 {% block header2 %}Journal your things{% endblock %}
 
 {% block content %}
-    <form enctype="multipart/form-data" method="post" class="pure-form pure-form-aligned">
+    <form enctype="multipart/form-data" method="post" class="pure-form pure-form-aligned" id="journal">
     {% csrf_token %}
     {{form.as_p }}
     {% for error in formset.errors %}
         {{ error }}<br/>
     {% endfor %}
-    <button type="submit" class="pure-button">Save</button>
-    <p>&nbsp;</p>
+    
+   <button onclick="myFunction()" class="pure-button" >Save Journal</button> 
+   <p>&nbsp;</p>
+</form>
+
+<script>
+function myFunction() {
+  var x = document.getElementById("loading");
+  var y = document.getElementById("main");
+  x.style.display = "block";
+  y.style.display = "none";
+  document.getElementById("journal").submit();
+
+}
+</script>
+    
 {% endblock %}
+
+{% block loading %}
+<h2 class="content-head ">Uploading</h2>
+<img src="/static/img/upload.gif" id="spinnger" >
+{% endblock %}
+
 

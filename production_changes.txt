@@ -1,3 +1,15 @@
+cd ~
+mv five_fun_things five_fun_things-old
+rm master.zip
+wget https://github.com/bmsleight/five_fun_things/archive/master.zip
+unzip master.zip
+mv five_fun_things-master five_fun_things
+
+cp -r five_fun_things-old/uploads five_fun_things/uploads
+cp five_fun_things-old/db.sqlite3 five_fun_things/
+cp five_fun_things-old/five_fun_things/settings.py five_fun_things/five_fun_things/settings.py
+cp -r five_fun_things-old/cache five_fun_things/
+
 # Change setting:-
 # EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'

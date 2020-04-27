@@ -55,10 +55,14 @@
 </div>
 
 <div class="content-wrapper">
-  <div class="content">
+  <div class="content" id="main">
     <h2 class="content-head ">{% block header2 %}{% endblock %}</h2>
     {% block content %}{% endblock content %}
   </div>
+  <div class="content" id="loading" style="display:none"/>
+    {% block loading %}{% endblock loading %}
+  </div>
+  
 
   <div class="footer l-box is-center">
     Good mental health everyday
