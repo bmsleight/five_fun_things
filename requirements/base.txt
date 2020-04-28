@@ -7,3 +7,4 @@ django==3.0.5  # pyup: < 3.1  # https://www.djangoproject.com/
 #django-allauth==0.41.0  # https://github.com/pennersr/django-allauth
 django-allauth
 sorl-thumbnail
+wordcloud

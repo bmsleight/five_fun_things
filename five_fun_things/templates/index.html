@@ -2,6 +2,8 @@
 
 {% block header2 %}Welcome to Five Fun Things{% endblock %}
 
+{% block onloadjs %}flashlogo(){% endblock %}
+
 {% block content %}
 <p>Five Fun Things was inspired by article in Private Eye. The premise
 was rather than worry about eating <a href="https://www.nhs.uk/live-well/eat-well/5-a-day-what-counts/"  target="_blank">5 fruit and veg a day</a>, its better to do five fun t$
@@ -42,3 +44,27 @@ every day. With helpful reminders to make this a habit. </p>
 </ul> 
 
 {% endblock %}
+
+{% block loading %}
+<h2 class="content-head ">Welcome</h2>
+<img src="/static/img/upload.gif" id="spinnger" >
+
+<script>
+function flashlogo() {
+        var x = document.getElementById("loading");
+        var y = document.getElementById("main");
+        x.style.display = "block";
+        y.style.display = "none";
+    
+    setTimeout(() => {  
+        var x = document.getElementById("loading");
+        var y = document.getElementById("main");
+        y.style.display = "block";
+        x.style.display = "none";
+        }, 1000);
+}
+</script>
+
+{% endblock %}
+
+
