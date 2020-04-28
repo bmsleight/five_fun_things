@@ -16,6 +16,7 @@ from wordcloud import WordCloud, ImageColorGenerator
 import numpy as np
 from PIL import Image
 from tempfile import NamedTemporaryFile
+from django.conf import settings
 
 
 
@@ -76,9 +77,9 @@ def cloud_view(request):
     all_thing_text = ""
     for r in things:
         all_thing_text = all_thing_text + " " + r
-    colours = np.array(Image.open('/home/bms/django/five_fun_things/static/' + "/img/colours.png"))
+    colours = np.array(Image.open(settings.STATIC_ROOT + "/img/colours.png"))
     image_colors = ImageColorGenerator(colours)
-    mask = np.array(Image.open('/home/bms/django/five_fun_things/static/' + "/img/mask.png"))
+    mask = np.array(Image.open(settings.STATIC_ROOT + "/img/mask.png"))
     wc = WordCloud(background_color="#FFDE3C", mask=mask)
     wc.generate(text=all_thing_text)
     wc.recolor(color_func=image_colors)

@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block header2 %}Generating Cloud{% endblock %}
+
+{% block onloadjs %}loadcloud(){% endblock %}
+
+{% block content %}
+
+<img src="/static/img/upload.gif" id="spinnger" width="256">
+
+<script>
+function loadcloud() {
+    document.getElementById("spinnger").src = "/things/cloud/cloud.png";
+}
+</script>
+
+{% endblock %}
+
+
