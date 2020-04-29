@@ -90,5 +90,6 @@ def cloud_view(request):
     return HttpResponse(image_data, content_type="image/png")    
 
 
+
 class ThingList(LoginRequiredMixin, ListView):
     model = Thing

@@ -27,6 +27,7 @@ urlpatterns = [
     path('accounts/', TemplateView.as_view(template_name='accounts.html')),
     path('things/', include('funthings.urls')), 
     path('manifest.json', TemplateView.as_view(template_name='manifest.json')), # Really poor but needs to be root
+    path('service-worker.js', TemplateView.as_view(template_name='service-worker.js', content_type="application/x-javascript")),
     path('', TemplateView.as_view(template_name='index.html')), 
-    
+    #worker_script
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
