@@ -8,3 +8,5 @@ django==3.0.5  # pyup: < 3.1  # https://www.djangoproject.com/
 django-allauth
 sorl-thumbnail
 wordcloud
+
+# https://github.com/rajatsehgal/add-to-home-screen/
