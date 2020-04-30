@@ -9,4 +9,4 @@ django-allauth
 sorl-thumbnail
 wordcloud
 
-# https://github.com/rajatsehgal/add-to-home-screen/
+# https://jacobdb.github.io/pwa-install-prompt/demo/
