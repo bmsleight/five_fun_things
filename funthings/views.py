@@ -77,9 +77,9 @@ def cloud_view(request):
     all_thing_text = ""
     for r in things:
         all_thing_text = all_thing_text + " " + r
-    colours = np.array(Image.open(settings.STATIC_ROOT + "/img/colours.png"))
+    colours = np.array(Image.open(settings.STATIC_ROOTR + "/img/colours.png"))
     image_colors = ImageColorGenerator(colours)
-    mask = np.array(Image.open(settings.STATIC_ROOT + "/img/mask.png"))
+    mask = np.array(Image.open(settings.STATIC_ROOTR + "/img/mask.png"))
     wc = WordCloud(background_color="#FFDE3C", mask=mask)
     wc.generate(text=all_thing_text)
     wc.recolor(color_func=image_colors)

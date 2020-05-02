@@ -24,7 +24,10 @@ from django.views.generic import TemplateView
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('accounts/', include('allauth.urls')), 
+    # Flat pages are a thing, but its just one more page ..
     path('accounts/', TemplateView.as_view(template_name='accounts.html')),
+    path('about/', TemplateView.as_view(template_name='about.html')),
+    path('key/', TemplateView.as_view(template_name='key.html')),
     path('things/', include('funthings.urls')), 
     path('manifest.json', TemplateView.as_view(template_name='manifest.json')), # Really poor but needs to be root
     path('service-worker.js', TemplateView.as_view(template_name='service-worker.js', content_type="application/x-javascript")),

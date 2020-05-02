@@ -48,7 +48,13 @@ label {
     text-align: center;
 }
 
+.is-right {
+    text-align: right;
+}
 
+.is-left {
+    text-align: left;
+}
 
 /*
  * -- PURE FORM STYLES --

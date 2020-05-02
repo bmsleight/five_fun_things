@@ -8,10 +8,27 @@
 
 <img src="/static/img/upload.gif" id="spinnger" width="256">
 
+
+<!-- https://stackoverflow.com/questions/280049/how-to-create-a-javascript-callback-for-knowing-when-an-image-is-loaded -->
 <script>
-function loadcloud() {
-    document.getElementById("spinnger").src = "/things/cloud/cloud.png";
+
+function waitForImageToLoad(imageElement){
+    return new Promise(resolve=>{imageElement.onload = resolve})
 }
+    
+function loadcloud() {
+document.getElementById("spinnger").src = "/things/cloud/cloud.png";
+    
+    var myImage = document.getElementById("spinnger");
+    var newImageSrc = "/things/cloud/cloud.png"
+    myImage.src = newImageSrc;
+    waitForImageToLoad(myImage).then(()=>{
+        // Image have loaded.
+        console.log('Loaded lol')
+        document.getElementById("content-head").innerText = "Word Cloud";
+    });
+}
+
 </script>
 
 {% endblock %}
