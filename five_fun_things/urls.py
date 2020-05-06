@@ -28,6 +28,7 @@ urlpatterns = [
     path('accounts/', TemplateView.as_view(template_name='accounts.html')),
     path('about/', TemplateView.as_view(template_name='about.html')),
     path('key/', TemplateView.as_view(template_name='key.html')),
+    path('privacy/', TemplateView.as_view(template_name='privacy.html')),
     path('things/', include('funthings.urls')), 
     path('manifest.json', TemplateView.as_view(template_name='manifest.json')), # Really poor but needs to be root
     path('service-worker.js', TemplateView.as_view(template_name='service-worker.js', content_type="application/x-javascript")),

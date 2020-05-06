@@ -22,6 +22,9 @@ DEFAULT_FROM_EMAIL = 'noreply@fivefunthings.com'
 
 # Chnage secret Key
 # Chnage Media root
+#https://sorl-thumbnail.readthedocs.io/en/latest/management.html
+
+
 
 python manage.py collectstatic
 python manage.py migrate --run-syncdb

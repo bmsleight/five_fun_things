@@ -168,6 +168,7 @@ ACCOUNT_SIGNUP_FORM_CLASS = 'users.forms.SignupForm'
 
 MEDIA_URL = '/uploads/'
 MEDIA_ROOT = '/home/bms/django/five_fun_things/'
-#MEDIA_ROOT = '/home/fivefunthings/five_fun_things/'
+#MEDIA_ROOT = '/home/fivefunthings/media'
 STATIC_ROOTR = '/home/bms/django/five_fun_things/static/'
 #STATIC_ROOT = '/home/fivefunthings/static'
+
