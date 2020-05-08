@@ -21,7 +21,7 @@
         condition:    null,
         container:    ".pwa-install-prompt__container",
         expires:      18,
-        show_after:   0,
+        show_after:   2,
     };
 
     const NEEDS_TO_SEE_PROMPT = function (options) {
