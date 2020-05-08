@@ -93,3 +93,5 @@ def cloud_view(request):
 
 class ThingList(LoginRequiredMixin, ListView):
     model = Thing
+    def get_queryset(self):
+        return Thing.objects.filter(funster=self.request.user)
